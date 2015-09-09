@@ -31,3 +31,13 @@ def vector_sub(v, w):
     # return newmat
     newmat = [(v[r] - w[r]) for r in range(len(v))]
     return newmat
+
+def dot(v, w):
+    new_sum = 0
+    newmat = [(v[r] * w[r]) for r in range(len(v))]
+    for n in range(len(newmat)):
+        new_sum += newmat[n]
+    return new_sum
+    '''
+    TODO: integrate the sum of the newmat list into the list comprehensives
+    '''

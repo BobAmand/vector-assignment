@@ -27,19 +27,19 @@ def test_shape_vectors():
     assert shape([1]) == (1,)
 
 
-# def test_vector_add():
-#     """
-#     [a b]  + [c d]  = [a+c b+d]
+def test_vector_add():
+    """
+    [a b]  + [c d]  = [a+c b+d]
+
+    Matrix + Matrix = Matrix
+    """
+    assert vector_add(v, w) == [1, 5, 4]
+    assert vector_add(u, y) == [11, 21, 31]
+    assert vector_add(u, z) == u
+
 #
-#     Matrix + Matrix = Matrix
-#     """
-#     assert vector_add(v, w) == [1, 5, 4]
-#     assert vector_add(u, y) == [11, 21, 31]
-#     assert vector_add(u, z) == u
-#
-# #
-# def test_vector_add_is_commutative():
-#     assert vector_add(w, y) == vector_add(y, w)
+def test_vector_add_is_commutative():
+    assert vector_add(w, y) == vector_add(y, w)
 
 
 #
@@ -61,17 +61,17 @@ def test_shape_vectors():
 #     vector_sum(v, w, m, y)
 #
 #
-# def test_dot():
-#     """
-#     dot([a b], [c d])   = a * c + b * d
-#
-#     dot(Vector, Vector) = Scalar
-#     """
-#     assert dot(w, y) == 160
-#     assert dot(m, n) == 15
-#     assert dot(u, z) == 0
-#
-#
+def test_dot():
+    """
+    dot([a b], [c d])   = a * c + b * d
+
+    dot(Vector, Vector) = Scalar
+    """
+    assert dot(w, y) == 160
+    assert dot(m, n) == 15
+    assert dot(u, z) == 0
+
+
 # @raises(ShapeException)
 # def test_dot_checks_shapes():
 #     """Shape rule: the vectors must be the same size."""
