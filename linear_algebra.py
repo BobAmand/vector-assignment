@@ -1,14 +1,15 @@
 class ShapeException(Exception):
     pass
 
-def shape(vector):
-    shape = len(vector)
-    return (shape, )
+def shape(vec):
+    return = (len(vec), )
 
 def is_equal(x, y, tolerance=0.001):
     return abs(x-y) <= tolerance
 
 def vector_add(v, w):
+    if shape(vec1) != shape(vec2):
+        raise ShapeException("Shape rule: the vectors must be the same size.")
     '''
     Adds two lists by aligned indexes:
     old way first, list comprehensive second.
@@ -32,19 +33,24 @@ def vector_sub(v, w):
     newmat = [(v[r] - w[r]) for r in range(len(v))]
     return newmat
 
-def vector_sum(vect_a, vect_b, vect_c, vect_d):
+def vector_sum(*args):
+    ret = [0] * len(args[0])  # initialize with series of zeros
+    for x in args:
+        ret = vector_add(ret, x)
+    return ret
+
     '''
     No input! But needs all vectors of same length.
     Conditional on all vectors are the same length.
 
     '''
-    sum_list =[]
-    for a in range(len(vect_a)):
-        for b in range(len(vect_b)):
-            for c in range(len(vect_c)):
-                for d in range(len)vect_d)):
-                    sum_list.append(vect_a[a] + vect_b[b] + vect_c[c] + vect_d[d])
-    return sum_list
+    # sum_list =[]
+    # for a in range(len(vect_a)):
+    #     for b in range(len(vect_b)):
+    #         for c in range(len(vect_c)):
+    #             for d in range(len)vect_d)):
+    #                 sum_list.append(vect_a[a] + vect_b[b] + vect_c[c] + vect_d[d])
+    # return sum_list
     '''
     TODO translate into list conditional.
     '''
