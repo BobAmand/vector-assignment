@@ -8,7 +8,7 @@ def is_equal(x, y, tolerance=0.001):
     return abs(x-y) <= tolerance
 
 def vector_add(v, w):
-    if shape(vec1) != shape(vec2):
+    if shape(v) != shape(w):
         raise ShapeException("Shape rule: the vectors must be the same size.")
     '''
     Adds two lists by aligned indexes:
@@ -56,43 +56,49 @@ def vector_sum(*args):
     '''
 
 def dot(v, w):
-    new_sum = 0
-    newmat = [(v[r] * w[r]) for r in range(len(v))]
-    for n in range(len(newmat)):
-        new_sum += newmat[n]
-    return new_sum
+    newmat = sum([(v[r] * w[r]) for r in range(len(v))])
+    return newmat
     '''
     TODO: integrate the sum of the newmat list into the list comprehensives
     '''
 
-def vector_multiply():
+def vector_multiply(vec, sca):
+    return [sca * x for x in vec]
     '''
     No input in the test function.  Do not understand the error/how test is testing.
     Assume vector, constant are being passed in.
     '''
-    vector_prod = [(vector[r] * constant) for r in range(len(vector))]
-    return vector_prod
+    # vector_prod = [(vector[r] * constant) for r in range(len(vector))]
+    # return vector_prod
 
-def vector_mean():
+def vector_mean(*args):
+    num = len(args)         # how many tuples in the args list
+    vector = vector_sum(*args) # unpacks the args.
+    return vector_multiply(vector/1)
+
+
+
     '''
     No input in the test function. Started with old school coding.
     Assume vect_a, vect_b, vect_c are being passed in.
     '''
-    sum_list =[]
-    mean_list =[]
-    denom = len(vect_a)
-    for a in range(len(vect_a)):
-        for b in range(len(vect_b)):
-            for c in range(len(vect_c)):
-                sum_list.append(vect_a[a] + vect_b[b] + vect_c[c])
-    for i in range(len(sum_list)):
-        mean_list.append(sum_list[i]/denom)
-    return mean_list
+    # sum_list =[]
+    # mean_list =[]
+    # denom = len(vect_a)
+    # for a in range(len(vect_a)):
+    #     for b in range(len(vect_b)):
+    #         for c in range(len(vect_c)):
+    #             sum_list.append(vect_a[a] + vect_b[b] + vect_c[c])
+    # for i in range(len(sum_list)):
+    #     mean_list.append(sum_list[i]/denom)
+    # return mean_list
     '''
     TODO translate into list conditional.
     '''
 
-def magnitude(vect_a, vect_b):
+def magnitude(vec):
+    return math.sqrt(dot(vec, vec))
+
     '''
     No input in the test fuction.
     Assume vect_a, vect_b are being passed in.
