@@ -38,7 +38,25 @@ def vector_sum(*args):
     for x in args:
         ret = vector_add(ret, x)
     return ret
+'''
+alternate:
+    return [sum(x) for x in zip(*args)]
 
+    res [len(x) for x in args]          #ShapeException check
+    if any(x != res[0] for x in res):
+        raise ShapeException
+
+    for r in x != res[0] for x in res:  #ShapeException check
+        if r == True:
+            raise ShapeException
+
+another alternative Jon's:
+    if len(args) == 2:
+        check_shape(args[0], args[1])
+        return vector_add(args[0], args[1])
+    else:
+        return vector_add(args[0], vector_sum(*args(1:]))
+'''
     '''
     No input! But needs all vectors of same length.
     Conditional on all vectors are the same length.
