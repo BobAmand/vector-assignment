@@ -32,15 +32,22 @@ def vector_sub(v, w):
     newmat = [(v[r] - w[r]) for r in range(len(v))]
     return newmat
 
-def vector_sum():
+def vector_sum(vect_a, vect_b, vect_c, vect_d):
     '''
     No input! But needs all vectors of same length.
     Conditional on all vectors are the same length.
 
     '''
-    # need to ripple through the parings of all vectors and compare length:
-    #
-
+    sum_list =[]
+    for a in range(len(vect_a)):
+        for b in range(len(vect_b)):
+            for c in range(len(vect_c)):
+                for d in range(len)vect_d)):
+                    sum_list.append(vect_a[a] + vect_b[b] + vect_c[c] + vect_d[d])
+    return sum_list
+    '''
+    TODO translate into list conditional.
+    '''
 
 def dot(v, w):
     new_sum = 0
@@ -52,16 +59,18 @@ def dot(v, w):
     TODO: integrate the sum of the newmat list into the list comprehensives
     '''
 
-def vector_multiply(vector, constant):
+def vector_multiply():
     '''
     No input in the test function.  Do not understand the error/how test is testing.
+    Assume vector, constant are being passed in.
     '''
     vector_prod = [(vector[r] * constant) for r in range(len(vector))]
     return vector_prod
 
-def vector_mean(vect_a, vect_b, vect_c):
+def vector_mean():
     '''
     No input in the test function. Started with old school coding.
+    Assume vect_a, vect_b, vect_c are being passed in.
     '''
     sum_list =[]
     mean_list =[]
@@ -76,11 +85,12 @@ def vector_mean(vect_a, vect_b, vect_c):
     '''
     TODO translate into list conditional.
     '''
-    
 
+def magnitude(vect_a, vect_b):
+    '''
+    No input in the test fuction.
+    Assume vect_a, vect_b are being passed in.
+    '''
 
-
-
-
-#
-# def magnitude():
+    magnitude = [(vect_a[i]**2 + vect_b[i]**2)**0.5 for i in range(len(vect_a))]
+    return magnitude
