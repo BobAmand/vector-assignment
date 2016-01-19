@@ -1,11 +1,14 @@
 class ShapeException(Exception):
     pass
 
+
 def shape(vec):
-    return = (len(vec), )
+    return(len(vec), )
+
 
 def is_equal(x, y, tolerance=0.001):
     return abs(x-y) <= tolerance
+
 
 def vector_add(v, w):
     if shape(v) != shape(w):
@@ -18,8 +21,9 @@ def vector_add(v, w):
     # for r in range(len(v)):
     #     newmat.append(v[r] + w[r])
     # return newmat
-    newmat = [(v[r]+ w[r]) for r in range(len(v))]
+    newmat = [(v[r] + w[r]) for r in range(len(v))]
     return newmat
+
 
 def vector_sub(v, w):
     '''
@@ -32,6 +36,7 @@ def vector_sub(v, w):
     # return newmat
     newmat = [(v[r] - w[r]) for r in range(len(v))]
     return newmat
+
 
 def vector_sum(*args):
     ret = [0] * len(args[0])  # initialize with series of zeros
@@ -56,37 +61,37 @@ alternate:
                 return vector_add(args[0], args[1])
             else:
                 return vector_add(args[0], vector_sum(*args(1:]))
-        '''
-    '''
-    My initial effort:
-    '''
-    # sum_list =[]
-    # for a in range(len(vect_a)):
-    #     for b in range(len(vect_b)):
-    #         for c in range(len(vect_c)):
-    #             for d in range(len)vect_d)):
-    #                 sum_list.append(vect_a[a] + vect_b[b] + vect_c[c] + vect_d[d])
-    # return sum_list
-    '''
-    TODO translate into list conditional.
-    '''
+
+'''
+#  My initial effort:
+'''
+# sum_list =[]
+# for a in range(len(vect_a)):
+#     for b in range(len(vect_b)):
+#         for c in range(len(vect_c)):
+#             for d in range(len)vect_d)):
+#                 sum_list.append(vect_a[a] + vect_b[b] + vect_c[c] + vect_d[d])
+# return sum_list
+'''
+#    TODO translate into list conditional.
+'''
 
 def dot(v, w):
     newmat = sum([(v[r] * w[r]) for r in range(len(v))])
     return newmat
-    '''
-    Applied the sum() to the whole conditional after in-class review
-    '''
+'''
+#    Applied the sum() to the whole conditional after in-class review
+
 
 def vector_multiply(vec, sca):
     return [sca * x for x in vec]
-    '''
+'''
     Assume vector, constant are being passed in.
     Initial effort:
 
     vector_prod = [(vector[r] * constant) for r in range(len(vector))]
     return vector_prod
-    '''
+'''
 
 def vector_mean(*args):
     num = len(args)         # how many tuples in the args list
@@ -98,8 +103,8 @@ def vector_mean(*args):
     Assumed (vect_a, vect_b, vect_c) are being passed in.
     My initial effort:
 
-    sum_list =[]
-    mean_list =[]
+    sum_list = []
+    mean_list = []
     denom = len(vect_a)
     for a in range(len(vect_a)):
         for b in range(len(vect_b)):
